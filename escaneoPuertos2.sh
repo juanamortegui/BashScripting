@@ -16,7 +16,8 @@ echo "Escaneando..."
 
 function escanear_1000_puertos_comunes(){
     rate_all=$((rate * 30))
-    puerto=$(cat /home/juan/Desktop/bashScripts/puerto.txt)
+    ruta=$(find / -name "puerto.txt" 2> /dev/null)
+    puerto=$(cat $ruta)
     resultado=$(nping $ip -p $puerto -c1 --rate $rate_all)
     imprimir
 }
