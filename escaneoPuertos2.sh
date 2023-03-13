@@ -23,7 +23,7 @@ function escanear_1000_puertos_comunes(){
         wget -q https://raw.githubusercontent.com/juanamortegui/BashScripting/main/4172636869766F20646520313030302070756572746F73.txt
     fi
     rate_all=$((rate * 30))
-    ruta=$(find / -name "$archivo" 2>/dev/null)
+    ruta=$(find ./ -name "$archivo" 2>/dev/null)
     mil_puertos=$(cat $ruta)
     resultado=$(nping $ip -p $mil_puertos -c1 --rate $rate_all)
     imprimir
